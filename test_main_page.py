@@ -5,9 +5,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 
-
-def test_guest_can_go_to_login_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/"
-    browser.get(link)
+def go_to_login_page(browser): # метод для открытия страницы логина
     login_link = browser.find_element(By.CSS_SELECTOR, "#login_link")
     login_link.click()
+
+def test_guest_can_go_to_login_page(browser):
+   browser.get(link)
+   go_to_login_page(browser)
+
+class MainPage():
