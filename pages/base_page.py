@@ -1,5 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 
+
 class BasePage():
     def __init__(self, browser, url, timeout=10): # метод, который вызывается, когда создаем объект
         self.browser = browser

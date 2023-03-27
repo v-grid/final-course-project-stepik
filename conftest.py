@@ -35,4 +35,3 @@ def browser(request):
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
-

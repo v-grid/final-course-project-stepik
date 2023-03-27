@@ -9,4 +9,3 @@ class MainPageLocators():
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form") # селектор для поиска формы авторизации
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form") # селектор для поиска формы регистрации
-
