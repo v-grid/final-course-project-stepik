@@ -48,3 +48,4 @@ def test_guest_can_see_register_form(browser):
     page = LoginPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.should_be_register_form()
 
+
