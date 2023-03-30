@@ -1,5 +1,8 @@
+import pytest
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
+
+
 
 
 '''from selenium.webdriver.support import expected_conditions as EC, wait
@@ -23,16 +26,28 @@ def test_guest_can_go_to_login_page(browser):
     page = MainPage(browser, link) # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.open()  # открываем страницу
     page.go_to_login_page()  # выполняем метод страницы — переходим на страницу логина
+    login_page = LoginPage(browser, browser.current_url) # выполняем метод страницы — переходим на страницу логина
+    login_page.should_be_login_page()
 
-def test_guest_can_see_login_url(browser):
+@pytest.mark.skip
+def test_guest_should_see_login_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/accounts/login/"
+    page = LoginPage(browser, link)
+    page.open()
+    page.should_be_login_page() # при запуске этого метода будут выполнены все 3 теста из файла login_page.py
+                                # также, методы можно вызывать по отдельности, чтобы разделить их на разные тесты
+
+@pytest.mark.skip
+def test_guest_can_see_login_url(browser): # входит в проверку should_be_login_page, можно закомментировать
     link = link_page
     page = MainPage(browser, link) # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.open()  # открываем страницу
     page.go_to_login_page()  # выполняем метод страницы — переходим на страницу логина
-    page = LoginPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
-    page.should_be_login_url()
+    login_page = LoginPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
+    login_page.should_be_login_url()
 
-def test_guest_can_see_login_form(browser):
+@pytest.mark.skip
+def test_guest_can_see_login_form(browser): # входит в проверку should_be_login_page, можно закомментировать
     link = link_page
     page = MainPage(browser, link) # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.open()  # открываем страницу
@@ -40,7 +55,7 @@ def test_guest_can_see_login_form(browser):
     page = LoginPage(browser, link)  # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.should_be_login_form()
 
-def test_guest_can_see_register_form(browser):
+def test_guest_can_see_register_form(browser): # входит в проверку should_be_login_page, можно закомментировать
     link = link_page
     page = MainPage(browser, link) # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.open()  # открываем страницу
