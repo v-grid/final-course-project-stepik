@@ -4,15 +4,6 @@ from pages.login_page import LoginPage
 
 
 
-
-'''from selenium.webdriver.support import expected_conditions as EC, wait
-from selenium.webdriver.support.ui import WebDriverWait
-import time
-import pytest
-from selenium.webdriver.common.by import By'''
-
-
-
 link_page = "http://selenium1py.pythonanywhere.com/"
 
 def test_guest_should_see_login_link(browser):
@@ -26,7 +17,7 @@ def test_guest_can_go_to_login_page(browser):
     page = MainPage(browser, link) # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
     page.open()  # открываем страницу
     page.go_to_login_page()  # выполняем метод страницы — переходим на страницу логина
-    login_page = LoginPage(browser, browser.current_url) # выполняем метод страницы — переходим на страницу логина
+    login_page = LoginPage(browser, browser.current_url) # после перехода получаем текущий адркс, чтобы дальше его использовать для методов в классе LoginPage
     login_page.should_be_login_page()
 
 @pytest.mark.skip
