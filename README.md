@@ -8,7 +8,7 @@ Final course project stepik
 Всем добра!
  
 
-Команда запуска теста "pytest -v --tb=line --language=en test_main_page.py"
+Вариант команд запуска теста "pytest -v --tb=line --language=en test_main_page.py", "pytest -s -v test_product_page.py"
 
 base_page.py - базовая страница, от которой унаследованы все остальные классы. В ней мы описаны вспомогательные методы для работы с драйвером.
 

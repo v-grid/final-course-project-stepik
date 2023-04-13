@@ -1,5 +1,12 @@
 from selenium.common.exceptions import NoSuchElementException
-
+import math
+import math
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from .locators import *
 
 class BasePage():
     def __init__(self, browser, url, timeout=10): # метод, который вызывается, когда создаем объект
